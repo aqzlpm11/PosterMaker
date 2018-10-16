@@ -119,7 +119,7 @@ def gen_poster():
     user['ip'] = request.remote_addr
     save_user_info(user)
     render_poster(user_img_file, front_img_file, os.path.join(app.config["POSTER_FOLDER"], output_file), user)
-    os.remove(user_img_file)
+    # os.remove(user_img_file)
     return redirect('/show_poster/{}'.format(output_file))
 
 if __name__ == '__main__':

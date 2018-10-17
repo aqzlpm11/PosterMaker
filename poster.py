@@ -63,8 +63,8 @@ def render_poster(user_img_file, front_img_file, output_file, user):
     d.text((40/100*W, 88.5/100*H-text_sz[1]/2), user['motto'], font=fnt, fill=(255,255,255))
 
     # 减小输出大小，保存成JPG，节省空间
-    output_W = 800
-    img = img.resize((output_W, int(output_W / img.size[0] * img.size[1])))
+    # output_W = 800
+    # img = img.resize((output_W, int(output_W / img.size[0] * img.size[1])))
     img = img.convert("RGB")
 
     img.save(output_file, "JPEG", quality=80) 
@@ -95,7 +95,7 @@ def gen_poster():
         'name': request.form['name'],
         'en_name': request.form['en_name'],
         'title': request.form['title'],
-        'motto': '"请支持我成为TEDx讲者。"', # '"' + request.form['motto'] + '"',
+        'motto': '"' + request.form['motto'] + '"',
     }
     if len(user['name']) > 6:
         return "名字过长"
@@ -129,4 +129,4 @@ def gen_poster():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=36666, threaded=True)
-#    app.run(host='0.0.0.0', port=36667, debug=True, threaded=True)
+    # app.run(host='0.0.0.0', port=36667, debug=True, threaded=True)

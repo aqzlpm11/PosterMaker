@@ -4,7 +4,7 @@
 
 ## 文件说明
 - poster.py (主文件)
-- static/index.html (主页)
+- templates/index.html (主页)
 - 模板资源
   - QRcode.png
   - default-photo.png

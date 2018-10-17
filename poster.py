@@ -10,6 +10,11 @@ app.config['UPLOAD_FOLDER'] = "./upload"
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 app.config['POSTER_FOLDER'] = "./static/poster/"
 app.config['POSTER_URL'] = "/static/poster/"
+if not os.path.exists(app.config['POSTER_FOLDER']):
+    os.mkdir(app.config['POSTER_FOLDER'])
+
+if not os.path.exists(app.config['UPLOAD_FOLDER']):
+    os.mkdir(app.config['UPLOAD_FOLDER'])
 
 def render_poster(user_img_file, front_img_file, output_file, user):
     user_img = Image.open(user_img_file)
